@@ -231,7 +231,6 @@ void dataLookup::userSearch()
         for (int u = 0; u < iterators.size(); u++)
             {
             userIds.push_back(iterators[u] -> second);
-
             }
         //these nested for loops are used to find the pageIDs that all of the individual userIds vectors have in common
         //if all of the userIds vectors have these pageIDs in common than for each word in the name that the user entered, we must be pointing to the same dataEntry in the overall map
@@ -253,6 +252,12 @@ void dataLookup::userSearch()
                 tempIds = finalIds;
                 finalIds.clear();
             }
+        //if no characters have that full name then we quit
+        if (tempIds.size() == 0)
+        {
+            cout << "No characters with that full name"<<endl;
+            return;
+        }
         //same as with the above two searches. User can pick one character with this name (words can appear in any order)
         cout << "All of the names of characters with that name : " <<endl;
         vector <dataEntry> characters;
