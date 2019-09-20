@@ -15,5 +15,5 @@ void toUpperCase(string & s);
 //this function is used to remove a substring(findString) and replace it with replaceString
 void findReplaceString(string & s, string  findString, string replaceString);
 
-#include "extraFunctions.cpp"
+//#include "extraFunctions.cpp"
 #endif // EXTRAFUNCTIONS_H
