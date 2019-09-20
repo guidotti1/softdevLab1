@@ -2,6 +2,7 @@
 #define DATAENTRY_H
 
 #include <iostream>
+#include <vector>
 using namespace std;
 
 class dataEntry
