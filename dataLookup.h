@@ -5,6 +5,7 @@
 #include <map>
 #include <vector>
 #include <string>
+#include "dataEntry.h"
 using namespace std;
 
 class dataLookup
