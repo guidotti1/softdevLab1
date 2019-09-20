@@ -2,6 +2,7 @@
 #define EXTRAFUNCTIONS_H
 
 #include <iostream>
+#include <vector>
 using namespace std;
 
 //removeSpecialCharacters basically helps to deal with the parentheses in the input
