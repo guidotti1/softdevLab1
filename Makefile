@@ -10,7 +10,7 @@ CFLAGS= -std=c++14
 
 RM= /bin/rm -f
 
-all: namesdemo
+all: main
 
 dataEntry.o: dataEntry.cpp dataEntry.h
 	$(CC) $(CFLAGS) dataEntry.cpp -c
