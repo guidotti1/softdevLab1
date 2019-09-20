@@ -5,6 +5,7 @@
 #include <map>
 #include <vector>
 #include <string>
+#include <fstream>
 #include "dataEntry.h"
 using namespace std;
 
