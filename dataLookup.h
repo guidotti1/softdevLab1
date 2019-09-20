@@ -1,6 +1,12 @@
 #ifndef DATALOOKUP_H
 #define DATALOOKUP_H
 
+#include <iostream>
+#include <map
+#include <vector>
+#include <string>
+using namespace std;
+
 class dataLookup
 {
 public :
