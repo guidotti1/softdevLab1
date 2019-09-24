@@ -10,7 +10,7 @@ CFLAGS= -std=c++14
 
 RM= /bin/rm -f
 
-all: main
+all: marvelLookup PutCGI PutHTML
 
 dataEntry.o: dataEntry.cpp dataEntry.h
 	$(CC) $(CFLAGS) dataEntry.cpp -c
@@ -21,11 +21,23 @@ dataLookup.o: dataLookup.cpp dataLookup.h dataEntry.h
 extraFunctions.o: extraFunctions.cpp extraFunctions.h
 	$(CC) $(CFLAGS) extraFunctions.cpp -c
 
-main.o: main.cpp dataEntry.h dataLookup.h extraFunctions.h
+marvelLookup.o: marvelLookup.cpp dataEntry.h dataLookup.h extraFunctions.h
 	$(CC) $(CFLAGS) main.cpp -c
 
-main: main.o dataEntry.o dataLookup.o extraFunctions.o
-	$(CC) $(CFLAGS) main.o dataEntry.o dataLookup.o extraFunctions.o -o main
+marvelLookup: marvelLookup.o dataEntry.o dataLookup.o extraFunctions.o
+	$(CC) $(CFLAGS) marvelLookup.o dataEntry.o dataLookup.o extraFunctions.o -o marvelLookup
+	
+PutCGI: marvelLookup
+	chmod 757 marvelLookup
+	cp marvelLookup /usr/lib/cgi-bin/$(USER)_marvelLookup.cgi
+	
+	echo "Current contents of your cgi-bin directory: "
+	ls -l /usr/lib/cgi-bin/
+	
+PutHTML: 
+	cp namelookup.html /var/www/html/class/softdev/$(USER)/MarvelLookup/
+	cp namelookup.css /var/www/html/class/softdev/$(USER)/MarvelLookup/
+	cp namelookup.js /var/www/html/class/softdev/$(USER)/MarvelLookup/
 
 clean:
 	rm -f *.o  main
