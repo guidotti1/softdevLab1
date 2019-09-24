@@ -222,7 +222,7 @@ vector<dataEntry> dataLookup::userSearch(string type, string data)
                 if (nameMap.count(fullUserName[u]) == 0)
                     {
                     cout << "Name not in map " << endl;
-                    return;
+                    return characters;
                     }
             //otherwise we find that word in the nameMap. With this we can find the vector of PIDS for each of the distinct words in the name
             iterators.push_back(nameMap.find(fullUserName[u]));
