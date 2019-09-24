@@ -292,5 +292,6 @@ void dataLookup::readMatches (vector<dataEntry> characters)
             {
             cout << characters[i].name[q] << endl;
             }
+        cout << ","
         }
 }
