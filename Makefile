@@ -22,7 +22,7 @@ extraFunctions.o: extraFunctions.cpp extraFunctions.h
 	$(CC) $(CFLAGS) extraFunctions.cpp -c
 
 marvelLookup.o: marvelLookup.cpp dataEntry.h dataLookup.h extraFunctions.h
-	$(CC) $(CFLAGS) main.cpp -c
+	$(CC) $(CFLAGS) marvelLookup.cpp -c
 
 marvelLookup: marvelLookup.o dataEntry.o dataLookup.o extraFunctions.o
 	$(CC) $(CFLAGS) marvelLookup.o dataEntry.o dataLookup.o extraFunctions.o -o marvelLookup
