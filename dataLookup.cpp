@@ -286,10 +286,10 @@ void dataLookup::readMatches (vector<dataEntry> characters)
 {
     cout << "Content-type: text/plain\n\n";
     cout << "Name of characters corresponding to that data: "<<endl;
-    for (int i = 0; i<characters.size(); i++)
+    for (int i = 0; i < characters.size(); i++)
         {
-        cout "Character " << i+1 << ": ";
-            for (int q = 0; q <characters.name.size(); q++)
+        cout << "Character " << i+1 << ": ";
+            for (int q = 0; q < characters.name.size(); q++)
             {
             cout << characters[i].name[q] << endl;
             }
