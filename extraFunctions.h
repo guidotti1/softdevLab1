@@ -1,9 +1,13 @@
 #ifndef EXTRAFUNCTIONS_H
 #define EXTRAFUNCTIONS_H
 
+#include <map>
+#include <string>
 #include <iostream>
 #include <vector>
+#include <dataEntry>
 using namespace std;
+
 
 //removeSpecialCharacters basically helps to deal with the parentheses in the input
 string removeSpecialCharacters(string & s);
