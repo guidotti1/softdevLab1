@@ -36,7 +36,7 @@ PutCGI: marvelLookup
 	
 PutHTML: 
 	cp namelookup.html /var/www/html/class/softdev/$(USER)/MarvelLookup/
-	cp namelookup.css /var/www/html/class/softdev/$(USER)/MarvelLookup/
+	cp namelookupbasic.css /var/www/html/class/softdev/$(USER)/MarvelLookup/
 	cp namelookup.js /var/www/html/class/softdev/$(USER)/MarvelLookup/
 
 clean:
