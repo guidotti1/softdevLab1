@@ -11,9 +11,11 @@
 #include "dataEntry.h"
 #include "dataLookup.h"
 
-#include "cgicc/Cgicc.h"
-#include "cgicc/HTTPHTMLHeader.h"
-#include "cgicc/HTMLClasses.h"
+#include <cgicc/CgiDefs.h>
+#include <cgicc/Cgicc.h>
+#include <cgicc/HTTPHTMLHeader.h>
+#include <cgicc/HTMLClasses.h>
+
 
 #define XML_USE_STL
 
