@@ -43,7 +43,7 @@ function getMatches(){
     if ($('#search').val().length < 2) return;
     $('#searchresults').empty();
     $.ajax({
-		url: '/cgi-bin/skon_namelookup.cgi?name='+$('#search').val()+'&type_select='+searchType,
+		url: '/cgi-bin/guidotti1_marvelLookup.cgi?name='+$('#search').val()+'&type_select='+searchType,
 		dataType: 'text',
 		success: processResults,
 		error: function(){alert("Error: Something went wrong");}
