@@ -11,11 +11,9 @@
 #include "dataEntry.h"
 #include "dataLookup.h"
 
-#include <cgicc/CgiDefs.h>
-#include <cgicc/Cgicc.h>
-#include <cgicc/HTTPHTMLHeader.h>
-#include <cgicc/HTMLClasses.h>
-
+#include "cgicc/Cgicc.h"
+#include "cgicc/HTTPHTMLHeader.h"
+#include "cgicc/HTMLClasses.h"
 
 #define XML_USE_STL
 
@@ -39,20 +37,20 @@ int main()
     //create year and name maps used for user lookup
     ourMap.createYearAndNameMaps();
     //allows user to repeat
-    bool repeat = true;
-    while (repeat)
-        {
+    //bool repeat = true;
+    //while (repeat)
+        //{
         vector<dataEntry> characters;
         characters = ourMap.userSearch(type, name);
         ourMap.readMatches(characters);
-        cout << "Enter 0 and press return to quit. Enter any other character to search again" << endl;
-        char repeatChar;
-        cin >> repeatChar;
-        if (repeatChar == '0')
-            {
-            repeat = false;
-            }
-        }
+        //cout << "Enter 0 and press return to quit. Enter any other character to search again" << endl;
+        //char repeatChar;
+        //cin >> repeatChar;
+        //if (repeatChar == '0')
+           // {
+           // repeat = false;
+           // }
+        //}
 return 0;
 }
 
