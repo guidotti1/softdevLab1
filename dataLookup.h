@@ -5,6 +5,8 @@
 #include <string>
 #include <iostream>
 #include <vector>
+#include <sstream>
+#include <fstream>
 #include "dataEntry.h"
 using namespace std;
 
