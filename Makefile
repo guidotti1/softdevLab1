@@ -25,7 +25,7 @@ marvelLookup.o: marvelLookup.cpp dataEntry.h dataLookup.h extraFunctions.h
 	$(CC) $(CFLAGS) marvelLookup.cpp -c
 
 marvelLookup: marvelLookup.o dataEntry.o dataLookup.o extraFunctions.o
-	$(CC) $(CFLAGS) marvelLookup.o dataEntry.o dataLookup.o extraFunctions.o -o marvelLookup
+	$(CC) $(CFLAGS) marvelLookup.o -o marvelLookup dataEntry.o dataLookup.o extraFunctions.o -L/usr/local/lib -lcgicc
 	
 PutCGI: marvelLookup
 	chmod 757 marvelLookup
