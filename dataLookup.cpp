@@ -205,10 +205,10 @@ vector<dataEntry> dataLookup::userSearch(string type, string data)
     else if (userChoice == "3")
         {
         //takes in name and splits words into a vector based on spaces
-        cout << "Enter name to lookup " << endl;
-        string userName;
-        cin.ignore();
-        getline(cin, userName);
+        //cout << "Enter name to lookup " << endl;
+        string userName=data;
+        //cin.ignore();
+        //getline(cin, userName);
         userName += " ";
         removeSpecialCharacters(userName);
         toUpperCase(userName);
