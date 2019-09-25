@@ -291,7 +291,7 @@ void dataLookup::readMatches (vector<dataEntry> characters)
         cout << "Character " << i+1 << ": ";
             for (int q = 0; q < characters[i].name.size(); q++)
             {
-            cout << characters[i].name[q] << endl;
+            cout << characters[i].name[q] << " ";
             }
         cout << endl;
         }
