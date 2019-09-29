@@ -7,6 +7,7 @@ var xhr = new XMLHttpRequest();
 
 $(document).ready(function () {
     console.log("start!");
+    alert("Welcome to Marvel character lookup! Make sure to click clear page after going through a search");
     searchType="Temp";
     charNumber ="0";
     data="Temp";
