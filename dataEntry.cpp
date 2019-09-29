@@ -57,31 +57,31 @@ ostream& operator<<(ostream&os, const dataEntry& data)
         {
         os << data.name[r] << " ";
         }
-    os << endl;
+    os << ",";
     //if all of these characteristics are not empty then we will output them
     if (data.align != "")
         {
-        os << "This character's alignment is: " << data.align << endl;
+        os << "This character's alignment is: " << data.align << ",";
         }
     if (data.eye != "")
         {
-        os << "This character's eye color is: " << data.eye << endl;
+        os << "This character's eye color is: " << data.eye << ",";
         }
     if (data.hair != "")
         {
-        os << "This character's hair color is: " << data.hair << endl;
+        os << "This character's hair color is: " << data.hair << ",";
         }
     if (data.sex != "")
         {
-        os << "This character's gender is: " << data.sex << endl;
+        os << "This character's gender is: " << data.sex << ",";
         }
     if (data.appearances != "")
         {
-        os << "This character has made: " << data.appearances << " appearances " << endl;
+        os << "This character has made: " << data.appearances << " appearances " << ",";
         }
     if (data.emptyYear == false)
         {
-        os << "This character was first introduced in : " << data.year << endl;
+        os << "This character was first introduced in : " << data.year << ",";
         }
 
     return os;
