@@ -119,28 +119,25 @@ void dataLookup::createYearAndNameMaps()
         }
 }
 
-vector<dataEntry> dataLookup::userSearch(string type, string data)
+vector<dataEntry> dataLookup::userSearch(char type, string data)
 {
     cout << "Content-type: text/plain\n\n";
     //user can look up by one name of the word, year introduced, or multiple words in the name (in any order)
     //cout << "Press 1 to look up by name (only one word), 2 to look up by year introduced, or 3 to look up by name (>1 word, in any order)" << endl;
-    string userChoice=type;
+    char userChoice=type;
     //cin >> userChoice;
     vector<string> userId;
     map<string, vector<string> >::iterator findIt;
     vector<dataEntry> characters;
-    if (userChoice == "1")
+    if (userChoice == '1')
         {
         //takes name, converts to upper case and tries to find it in the map
         //if its not there just quit the search
-        //cout << "Enter the name to lookup " << endl;
         string userName=data;
-        //cin >> userName;
         toUpperCase(userName);
         findIt = nameMap.find(userName);
         if (nameMap.count(userName) == 0)
             {
-            cout << "Name not in the map" << endl;
             return characters;
             }
         //if the name is in the map, then we take the vector<string> of page ids and the name of each character is output
@@ -148,67 +145,37 @@ vector<dataEntry> dataLookup::userSearch(string type, string data)
         else
             {
             userId = findIt -> second;
-            //cout << "All of the names of characters with that name : " <<endl;
-            //vector <dataEntry> characters;
             for (int t = 0; t < userId.size(); t++)
                 {
-                //cout << "Character " << t+1 << ": "<<endl;
-                for (int q = 0; q < dataMap[userId[t]].name.size(); q++)
-                    {
-                    //cout << dataMap[userId[t]].name[q] << " ";
-                    }
                 characters.push_back(dataMap[userId[t]]);
-                //cout << endl;
                 }
-            //cout << "Enter the number of the character whose data you want to see " << endl;
-            //int characterChoice;
-            //cin >> characterChoice;
-            //cout << characters[characterChoice-1];
             return characters;
             }
         }
     //works the same as name (one word) search above
-    else if (userChoice == "2")
+    else if (userChoice == '2')
         {
-        //cout << "Enter year to lookup " << endl;
         string userYear=data;
-        //cin >> userYear;
         findIt = yearMap.find(userYear);
         if (yearMap.count(userYear) == 0)
             {
-            cout << "Year not in map" << endl;
             return characters;
             }
         else
             {
             userId = findIt -> second;
-            //cout << "All of the names of characters introduced in that year : " <<endl;
-            //vector <dataEntry> characters;
             for (int t = 0; t < userId.size(); t++)
                 {
-                //cout << "Character " << t+1 << ": "<<endl;
-                for (int q = 0; q < dataMap[userId[t]].name.size(); q++)
-                    {
-                    //cout << dataMap[userId[t]].name[q] << " ";
-                    }
                 characters.push_back(dataMap[userId[t]]);
-                //cout << endl;
                 }
-            //cout << "Enter the number of the character whose data you want to see " << endl;
-            //int characterChoice;
-            //cin >> characterChoice;
-            //cout << characters[characterChoice-1];
             return characters;
             }
         }
     //multi word search
-    else if (userChoice == "3")
+    else if (userChoice == '3')
         {
-        //takes in name and splits words into a vector based on spaces
-        //cout << "Enter name to lookup " << endl;
         string userName=data;
         //cin.ignore();
-        //getline(cin, userName);
         userName += " ";
         removeSpecialCharacters(userName);
         toUpperCase(userName);
@@ -221,7 +188,6 @@ vector<dataEntry> dataLookup::userSearch(string type, string data)
                 //if one of these words is not in the map then we just quit
                 if (nameMap.count(fullUserName[u]) == 0)
                     {
-                    cout << "Name not in map " << endl;
                     return characters;
                     }
             //otherwise we find that word in the nameMap. With this we can find the vector of PIDS for each of the distinct words in the name
@@ -258,7 +224,6 @@ vector<dataEntry> dataLookup::userSearch(string type, string data)
         //if no characters have that FULL NAME then we quit as well.
         if (tempIds.size() == 0)
             {
-            cout << "No characters with that full name" <<endl;
             return characters;
             }
         //same as with the above two searches. User can pick one character with this name (words can appear in any order)
@@ -266,33 +231,26 @@ vector<dataEntry> dataLookup::userSearch(string type, string data)
         //vector <dataEntry> characters;
         for (int t = 0; t < tempIds.size(); t++)
             {
-            //cout << "Character " << t+1 << ": "<<endl;
-            for (int q = 0; q < dataMap[tempIds[t]].name.size(); q++)
-                {
-                //cout << dataMap[tempIds[t]].name[q] << " ";
-                }
             characters.push_back(dataMap[tempIds[t]]);
-            //cout << endl;
             }
-        //cout << "Enter the number of the character whose data you want to see " << endl;
-        //int characterChoice;
-        //cin >> characterChoice;
-        //cout << characters[characterChoice-1];
         return characters;
         }
 }
 
 void dataLookup::readMatches (vector<dataEntry> characters)
 {
-    cout << "Content-type: text/plain\n\n";
     cout << "Name of characters corresponding to that data: "<<endl;
+    if (characters.size() == 0)
+    {
+        exit(1);
+    }
     for (int i = 0; i < characters.size(); i++)
         {
-        cout << "Character " << i+1 << ": ";
+        cout << i+1 << ",";
             for (int q = 0; q < characters[i].name.size(); q++)
             {
             cout << characters[i].name[q] << " ";
             }
-        cout << endl;
+        cout << ",";
         }
 }
