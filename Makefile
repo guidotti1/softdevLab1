@@ -30,14 +30,15 @@ marvelLookup: marvelLookup.o dataEntry.o dataLookup.o extraFunctions.o
 PutCGI: marvelLookup
 	chmod 757 marvelLookup
 	cp marvelLookup /usr/lib/cgi-bin/$(USER)_marvelLookup.cgi
+	cp input.txt /usr/lib/cgi-bin/$(USER)_input.txt
 	
 	echo "Current contents of your cgi-bin directory: "
 	ls -l /usr/lib/cgi-bin/
 	
 PutHTML: 
-	cp namelookup.html /var/www/html/class/softdev/$(USER)/MarvelLookup/
-	cp namelookupbasic.css /var/www/html/class/softdev/$(USER)/MarvelLookup/
-	cp namelookup.js /var/www/html/class/softdev/$(USER)/MarvelLookup/
+	cp marvel.html /var/www/html/class/softdev/$(USER)/MarvelLookup/
+	cp marvel.css /var/www/html/class/softdev/$(USER)/MarvelLookup/
+	cp marvel.js /var/www/html/class/softdev/$(USER)/MarvelLookup/
 
 clean:
 	rm -f *.o  main
