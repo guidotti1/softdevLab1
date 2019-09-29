@@ -239,7 +239,6 @@ vector<dataEntry> dataLookup::userSearch(char type, string data)
 
 void dataLookup::readMatches (vector<dataEntry> characters)
 {
-    cout << "Name of characters corresponding to that data: "<<endl;
     if (characters.size() == 0)
     {
         exit(1);
