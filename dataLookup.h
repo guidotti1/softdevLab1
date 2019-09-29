@@ -27,8 +27,8 @@ public :
     //createYearAndNameMaps creates the two above maps to allow for the user to search by name/year
     void createYearAndNameMaps();
     //userSearch is a function that allows the user to search by name (one word), year introduced, or name (>1 word in any order)
-    vector<dataEntry> userSearch(string type, string data);
-
+    vector<dataEntry> userSearch(char type, string data);
+    //reads matches for a name/year
     void readMatches (vector<dataEntry> characters);
 
 private:
