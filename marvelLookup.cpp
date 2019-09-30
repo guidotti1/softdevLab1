@@ -29,6 +29,7 @@ int main()
     form_iterator itts = cgi.getElement("type_select");
     form_iterator itname = cgi.getElement("name");
     form_iterator itcharNumber = cgi.getElement("charNumber");
+    cout << "Content-type: text/plain\n\n";
     //gets the parameters from web page
     string type = **itts;
     char ctype = type[0];
