@@ -45,23 +45,25 @@ function userSelectCharacter()
 	result += ' <\div>';
 	var button  ='<button type="button" id ="charNumberButton" class="btn btn-default">Submit</button>';
 	var $button = $(button).bind("click", function()
-	{
-	getCharacter();
-	});	
-    var close = '</form>';
-    $('#characterNumberDisplay').append(result);
-    $('#characterNumberDisplay').append($button);
-    $('#characterNumberDisplay').append(close);
+		{
+		getCharacter();
+		});	
+   	var close = '</form>';
+   	$('#characterNumberDisplay').append(result);
+    	$('#characterNumberDisplay').append($button);
+    	$('#characterNumberDisplay').append(close);
 }
 
 
-function processResults(results) {
+function processResults(results) 
+{
     $('#searchresults').empty();
     $('#searchresults').append(nameTable(results));
 }
 
-function clearResults() {
-	console.log("results being cleared");
+function clearResults() 
+{
+    console.log("results being cleared");
     $('#searchresults').empty();
     $('#characterNumberDisplay').empty();
     searchType="Temp";
@@ -71,8 +73,9 @@ function clearResults() {
     //window.location.reload();
  }
 
-function getMatches(){
-    console.log("in get matches");
+function getMatches()
+{
+    //console.log("in get matches");
     data = $('#search').val();
     if ($('#search').val().length < 2) return;
     $('#searchresults').empty();
@@ -82,12 +85,11 @@ function getMatches(){
 		success: processResults,
 		error: function(){alert("Error: Something went wrong");}
     });
-
 }
 
 function getCharacter()
 {
-	console.log("in get character!!!");
+    //console.log("in get character!!!");
     charNumber=$('#charNumberInput').val();
     $.ajax({
 		url: '/cgi-bin/guidotti1_marvelLookup.cgi?name='+data+'&type_select='+searchType+"&charNumber="+charNumber,
@@ -107,11 +109,11 @@ function processCharacter(result)
 	var attributeList = '<ul class="list-group">';
 	var a = result.split(",");
 	var aLen = a.length;
-    for (var i = 0; i < aLen; i++) 
-    {
-	attributeList += '<li class="list-group-item">'+a[i]+'</li>';
-    }
-    attributeList += '</ul>'
-    $('#characterNumberDisplay').append(attributeList);
+    	for (var i = 0; i < aLen; i++) 
+    	{
+		attributeList += '<li class="list-group-item">'+a[i]+'</li>';
+    	}
+    	attributeList += '</ul>'
+    	$('#characterNumberDisplay').append(attributeList);
 }	
 
