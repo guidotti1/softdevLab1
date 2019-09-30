@@ -121,11 +121,8 @@ void dataLookup::createYearAndNameMaps()
 
 vector<dataEntry> dataLookup::userSearch(char type, string data)
 {
-    cout << "Content-type: text/plain\n\n";
     //user can look up by one name of the word, year introduced, or multiple words in the name (in any order)
-    //cout << "Press 1 to look up by name (only one word), 2 to look up by year introduced, or 3 to look up by name (>1 word, in any order)" << endl;
     char userChoice=type;
-    //cin >> userChoice;
     vector<string> userId;
     map<string, vector<string> >::iterator findIt;
     vector<dataEntry> characters;
@@ -175,7 +172,6 @@ vector<dataEntry> dataLookup::userSearch(char type, string data)
     else if (userChoice == '3')
         {
         string userName=data;
-        //cin.ignore();
         userName += " ";
         removeSpecialCharacters(userName);
         toUpperCase(userName);
@@ -227,8 +223,6 @@ vector<dataEntry> dataLookup::userSearch(char type, string data)
             return characters;
             }
         //same as with the above two searches. User can pick one character with this name (words can appear in any order)
-        //cout << "All of the names of characters with that name : " <<endl;
-        //vector <dataEntry> characters;
         for (int t = 0; t < tempIds.size(); t++)
             {
             characters.push_back(dataMap[tempIds[t]]);
