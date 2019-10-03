@@ -31,7 +31,6 @@ marvelLookup: marvelLookup.o dataEntry.o dataLookup.o extraFunctions.o
 PutCGI: marvelLookup
 	chmod 757 marvelLookup
 	cp marvelLookup /usr/lib/cgi-bin/$(USER)_marvelLookup.cgi
-	cp input.txt /usr/lib/cgi-bin/$(USER)_input.txt
 	
 	echo "Current contents of your cgi-bin directory: "
 	ls -l /usr/lib/cgi-bin/
