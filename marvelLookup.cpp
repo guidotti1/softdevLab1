@@ -39,7 +39,7 @@ int main()
     istringstream iss(charNumber);
     iss >> charNumInt;
     //passes input file name to dataLookup constructor, constructs the map indexed by PID
-    string fileName = "guidotti1_input.txt";
+    string fileName = "/home/class/SoftDev/marvel/marvel-wikia-data.csv";
     dataLookup ourMap(fileName);
     //create year and name maps used for user lookup
     ourMap.createYearAndNameMaps();
